@@ -1,0 +1,22 @@
+<div class="main-container">
+  <div class="header">
+    Charts Demo
+  </div>
+  <div class="chart-container">
+    <div class="chart-box">
+      <div class="spinner-border" role="status" *ngIf="!dailyInventoryChartModel"></div>
+      <div class="modes-container">
+        <div class="modes" [ngClass]="mode=='day'? 'active':'inactive'" (click)="modeChange('day')" (mouseover)="hoverContent='Day'"
+          (mouseout)="hoverContent=null">D
+          <div *ngIf="hoverContent=='Day'" class="hover-content">{{hoverContent}}</div>
+        </div>
+        <div class="modes" [ngClass]="mode=='week'? 'active':'inactive'" (click)="modeChange('week')" (mouseover)="hoverContent='Week'"
+          (mouseout)="hoverContent=null">W
+          <div *ngIf="hoverContent=='Week'" class="hover-content">{{hoverContent}}</div>
+        </div>
+
+      </div>
+      <app-bar-chart *ngIf="dailyInventoryChartModel" [data]="dailyInventoryChartModel"></app-bar-chart>
+    </div>
+  </div>
+</div>
