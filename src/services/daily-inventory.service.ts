@@ -8,7 +8,7 @@ import DailyInventoryChartModel from '../models/DailyInventoryChart';
   providedIn: 'root'
 })
 export default class DailyInventoryService {
-  apiURL = 'http://localhost:5000/dailyInventory';
+  apiURL = 'http://localhost:3000/dailyInventory';
 
   constructor(private http: HttpClient) { }
 
